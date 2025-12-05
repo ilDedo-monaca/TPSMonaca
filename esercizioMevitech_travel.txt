@@ -1,0 +1,111 @@
+#include <stdio.h> 
+#include <string.h> 
+
+int main() 
+{ 
+    char scelta[20]; 
+    char scelta1[20]; 
+    char pensione; 
+    float prezzo; 
+    int notti, età;
+    printf("Benvenuto all’Agenzia Mevitech Travel!\n"); 
+    printf("inserisci la destinazione\n"); 
+    scanf("%s",scelta); 
+
+    if(strcmp(scelta,"mare")==0) 
+    { 
+        prezzo=500.00; 
+    } 
+    else if(strcmp(scelta,"montagna")==0) 
+    { 
+        prezzo=450.00; 
+    } 
+    else if(strcmp(scelta,"città")==0) 
+    { 
+        prezzo=400.00; 
+    } 
+    else 
+    { 
+        printf("scelta non conforme\n"); 
+        return 0; 
+    } 
+    printf("inserisci il numero di notti\n"); 
+    scanf("%d",&notti); 
+
+    if(notti<3) 
+    { 
+    } 
+    else if(notti>3 && notti < 6 ) 
+    { 
+        prezzo+=100.00; 
+    } 
+    else 
+    { 
+        prezzo+=200.00; 
+    } 
+    printf("inserisci il mezzo di trasporto\n"); 
+    scanf("%s",scelta1); 
+
+    if(strcmp(scelta1,"aereo")==0) 
+    { 
+        prezzo+=150.00; 
+    }     
+    else if(strcmp(scelta1,"treno")==0) 
+    { 
+        prezzo+=80.00; 
+    } 
+    else if(strcmp(scelta1,"auto")==0) 
+    {
+    } 
+    else 
+    { 
+        printf("scelta non conforme\n"); 
+        return 0; 
+    } 
+    printf(" vuoi la mezza pensione (M), pensione completa (P) o solo pernottamento (N)\n"); 
+    scanf(" %c", &pensione); 
+
+    if(pensione=='M') 
+    { 
+        prezzo+=100.00; 
+    }     
+    else if(pensione=='P') 
+    { 
+        prezzo+=200.00; 
+    } 
+    else if(pensione=='N') 
+    { 
+    } 
+    else 
+    { 
+        printf("scelta non conforme\n"); 
+        return 0; 
+    } 
+    printf("inserisci l'età\n"); 
+    scanf("%d",&età); 
+
+    if(età<12) 
+    { 
+        prezzo= (prezzo/100)*50; 
+    }     
+    else if(età>=12 && età<=25) 
+    { 
+        prezzo= prezzo - (prezzo/100)*10; 
+    } 
+    else if(età>=26 && età<=60) 
+    { 
+    } 
+    else 
+    { 
+        prezzo= prezzo - (prezzo/100)*20; 
+    } 
+    printf("Riepilogo prenotazione\n"); 
+    printf("Destinazione: %s\n", scelta); 
+    printf("Numero di notti: %d\n", notti); 
+    printf("Mezzo di trasporto: %s\n", scelta1); 
+    printf("Tipo di pensione: %c\n", pensione); 
+    printf("Età: %d\n", età); 
+    printf("Prezzo totale: %.2f euro\n", prezzo); 
+    return 0; 
+
+} 
