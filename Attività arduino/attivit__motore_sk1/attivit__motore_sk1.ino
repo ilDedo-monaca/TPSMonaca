@@ -2,7 +2,7 @@ int pinvel = 6;
 int IN1 = 4;
 int IN2 = 5; 
 void setup() {   
-  pinMode(enablePin, OUTPUT);   
+  pinMode(pinvel, OUTPUT);   
   pinMode(IN1, OUTPUT);   
   pinMode(IN2, OUTPUT);   
   digitalWrite(IN1, HIGH);   

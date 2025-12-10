@@ -20,7 +20,7 @@ void loop() {
     temp=(char)Serial.read();
     
     if(temp == '\n')
-    {
+    {0
       
       successo=true;
       break;
