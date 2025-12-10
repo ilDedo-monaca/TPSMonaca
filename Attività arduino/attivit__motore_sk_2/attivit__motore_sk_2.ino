@@ -36,6 +36,7 @@ void loop() {
   {
     Serial.println(testo);
     analogWrite(6,testo.toInt());
+    testo = "";
     successo=false;
   }
   
